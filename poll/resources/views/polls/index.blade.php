@@ -8,7 +8,7 @@
         <ul class="list-group">
             @foreach($polls as $poll)
                 <li class="list-group-item">
-                    {{ $poll->title }}
+                    {{ $poll->name }}
                 </li>
             @endforeach
         </ul>

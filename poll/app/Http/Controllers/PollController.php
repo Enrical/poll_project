@@ -32,9 +32,7 @@ class PollController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'nr_of_options' => $request->input('nr_of_options')
+            'name' => 'required|string',
         ]);
         
         $poll = new Poll();
@@ -66,9 +64,8 @@ class PollController extends Controller
     {
         
         $this->validate($request, [
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-            'nr_of_options' => $request->input('nr_of_options')
+            'name' => 'required|string'
+
         ]);
 
         $poll = Poll::findOrFail($id);
