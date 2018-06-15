@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/polls', 'PollController@index');
+Route::get('/polls/new', 'PollController@create');
+Route::post('/polls', 'PollController@store');
+Route::get('/polls/{id}/edit', 'PollController@edit');
+Route::post('/polls/{id}', 'PollController@update');
+//Route::get('/polls/{id}', 'PollController@show');
