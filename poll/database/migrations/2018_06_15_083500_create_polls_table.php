@@ -18,7 +18,7 @@ class CreatePollsTable extends Migration
             $table->string('code');
             $table->string('name', 255);
             $table->string('description');
-            $table->intger('nr_of_options');
+            $table->integer('nr_of_options');
             $table->timestamps();
         });
     }
