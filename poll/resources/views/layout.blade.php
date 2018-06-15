@@ -1,14 +1,4 @@
-<section id="books">
-    <div class="container">
-        <ul class="list-group">
-            @foreach($books as $book)
-                <li class="list-group-item">
-                    {{ $book->title }}
-                </li>
-            @endforeach
-        </ul>
-    </div>
-</section>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +22,6 @@
     @yield('content')
 
     <!-- FOOTER -->
-    @include('questions/footer')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
