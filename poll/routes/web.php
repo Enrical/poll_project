@@ -15,7 +15,8 @@
 //     return view('welcome');
 // });
 
-Route::get('/polls', 'PollController@index');
+Route::get('/polls', 'PollController@show');
+Route::get('/manage/polls', 'PollController@index');
 Route::get('/polls/new', 'PollController@create');
 Route::post('/polls', 'PollController@store');
 Route::get('/polls/{id}/edit', 'PollController@edit');

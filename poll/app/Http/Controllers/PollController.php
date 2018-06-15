@@ -16,7 +16,13 @@ class PollController extends Controller
         $view->polls = $polls;
         return $view;
     }
-
+    public function show()
+    {
+        $polls = DB::table('polls')->get();
+        $view = view('manage.show');
+        $view->polls = $polls;
+        return $view;
+    }
 
 //- create - returns view to create new Category
     public function create()
