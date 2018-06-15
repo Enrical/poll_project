@@ -40,13 +40,12 @@ class PollController extends Controller
             'code' => uniqid(),
             'name' => $request->input('name'),
             'description' => $request->input('description'),
-            'nr_of_options' => $request->input('nr_of_options')
         ]);
 
         $poll->save();
         //$poll->categories()->sync($request->categories);
 
-   return redirect()->action('PollOptionController@index', ['id' => $poll->id]);
+   return redirect()->action('PollOptionController@index', ['code' => $poll->code]);
         
     }
     //- edit   - returns edit view for category with given id
@@ -73,7 +72,6 @@ class PollController extends Controller
         $poll->fill([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
-            'nr_of_options' => $request->input('nr_of_options')
         ]);
 
         $poll->save();

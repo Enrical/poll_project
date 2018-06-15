@@ -11,10 +11,6 @@ Edit view
 {!! Form::text('description', $poll->description) !!}
 </div>
 
-<div class="form-group prl-5">
-    {!! Form::label('number of options', 'number of options') !!}
-    {!! Form::text('nr_of_options', $poll->nr_of_options) !!}
-</div>
 
 <div class="form-group prl-5">
 {!! Form::submit('Save') !!}
