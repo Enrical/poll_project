@@ -12,7 +12,7 @@ class PollController extends Controller
     public function index()
     {
         $polls = DB::table('polls')->get();
-        $view = view('polls.index');
+        $view = view('manage.index');
         $view->polls = $polls;
         return $view;
     }
@@ -55,9 +55,9 @@ class PollController extends Controller
         
     }
     //- edit   - returns edit view for category with given id
-    public function edit($id = null)
+    public function edit($code = null)
     {
-            $poll = Poll::findOrFail($id);
+            $poll = Poll::where('code', $code)->first();
      
             $view = view('polls.edit');
             $view->poll = $poll;
@@ -65,7 +65,7 @@ class PollController extends Controller
             return $view;
         
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $code)
     {
         
         $this->validate($request, [
@@ -73,7 +73,7 @@ class PollController extends Controller
 
         ]);
 
-        $poll = Poll::findOrFail($id);
+        $poll = Poll::where('code', $code)->first();
 
         $poll->fill([
             'name' => $request->input('name'),

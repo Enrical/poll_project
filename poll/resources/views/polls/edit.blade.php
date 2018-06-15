@@ -1,5 +1,5 @@
 Edit view
-<form action="{{ action('PollController@update', ['id' => $poll->id]) }}" method="post">
+<form action="{{ action('PollController@update', ['code' => $poll->code]) }}" method="post">
 {{ csrf_field() }}
 <div class="form-group prl-5">
 {!! Form::label('name', 'Poll name') !!}

@@ -10,6 +10,13 @@
                 <li class="list-group-item">
                     {{ $poll->name }}
                 </li>
+                <a href="{{ action('PollController@edit', ['code' => $poll->code]) }}">Edit</a>
+                <a href="{{ action('PollOptionController@create', ['code' => $poll->code]) }}">Add</a>
+                <a href="{{ action('PollOptionController@display', ['code' => $poll->code]) }}">Display</a>
+                
+            
+                 
+                 
                 
             @endforeach
         </ul>

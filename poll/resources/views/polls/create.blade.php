@@ -1,5 +1,5 @@
 Create view
-<form action="{{ action('PollController@store') }}" method="post">
+<form action="{{ action('PollOptionController@store', [$code]) }}" method="post">
 FORM
 
 {{ csrf_field() }}

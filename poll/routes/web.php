@@ -16,11 +16,13 @@
 // });
 
 Route::get('/polls', 'PollController@show');
-Route::get('/manage/polls', 'PollController@index');
 Route::get('/polls/new', 'PollController@create');
 Route::post('/polls', 'PollController@store');
-Route::get('/polls/{id}/edit', 'PollController@edit');
+Route::get('/polls/{code}/edit', 'PollController@edit');
 Route::post('/polls/{id}', 'PollController@update');
-Route::get('/poll_options/{code}', 'PollOptionController@index');
-Route::post('/poll_options/{code}', 'PollOptionController@create');
+Route::get('/poll_options/{code}', 'PollOptionController@create');
+Route::post('/poll_options/{code}', 'PollOptionController@store');
+Route::get('/poll_options/{code}/display', 'PollOptionController@display');
+
+
 //Route::get('/polls/{id}', 'PollController@show');

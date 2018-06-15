@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Poll;
 
 class PollOption extends Model
+
 {
-    public function polls() 
+    protected $guarded = [];
+
+    public function poll() 
     {
-    return $this->belongsToMany(Poll::class, 'poll_options');
+    return $this->belongsTo(Poll::class, 'code');
     }
 }
