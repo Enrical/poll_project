@@ -20,4 +20,6 @@ Route::get('/polls/new', 'PollController@create');
 Route::post('/polls', 'PollController@store');
 Route::get('/polls/{id}/edit', 'PollController@edit');
 Route::post('/polls/{id}', 'PollController@update');
+Route::get('/poll_options', 'PollOptionController@index');
+Route::post('/poll_options', 'PollOptionController@create');
 //Route::get('/polls/{id}', 'PollController@show');

@@ -46,7 +46,7 @@ class PollController extends Controller
         $poll->save();
         //$poll->categories()->sync($request->categories);
 
-   // return redirect()->action('PollController@edit', ['id' => $poll->id]);
+   return redirect()->action('PollOptionController@index', ['id' => $poll->id]);
         
     }
     //- edit   - returns edit view for category with given id
